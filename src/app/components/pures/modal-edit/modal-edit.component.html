@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title">Editar Estudiante</h4>
+   
+    <span type="button" class="close" aria-label="Close" (click)="closeModal()">
+        ❌
+    </span>
+  </div>
+  <div class="modal-body">
+    <!-- Contenido del modal: campos de edición, etc. -->
+    <form>
+      <div class="form-group mb-3">
+        <label for="name">Full name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="student.name" value="{{student.name}}" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group mb-3">
+        <label for="name">Email</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="student.email" value="{{student.email}}" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group mb-3">
+        <label for="name">Age</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="student.age" value="{{student.name}}" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label for="name">State</label>
+        <select class="form-select" id="state" [(ngModel)]="student.enabled" [ngModelOptions]="{standalone: true}">
+            <option [ngValue]="true" [selected]="student.enabled === true">Habilitado</option>
+            <option [ngValue]="false" [selected]="student.enabled === false">Inhabilitado</option>
+          </select>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+    <button type="button" class="btn btn-primary" (click)="saveChanges()">Guardar cambios</button>
+  </div>
+  
