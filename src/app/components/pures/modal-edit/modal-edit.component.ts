@@ -25,7 +25,6 @@ export class ModalEditComponent {
   }
 
   saveChanges() {
-    // Implementa la lógica para guardar los cambios
     this.activeModal.close('Cambios guardados');
   }
 }
